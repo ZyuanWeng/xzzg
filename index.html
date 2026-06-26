@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>兴证资管 - A股市场情绪指标</title>
+    <meta name="description" content="A股市场情绪指标、资金流向、投资者预期与市场动能展示。">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="logo" href="#top" aria-label="返回首页">
+        <img class="logo-image" src="assets/brand-logo.png" alt="兴证资管 固定收益与多元资产">
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a class="active" href="#top">首页</a>
+        <a href="#signals">情绪信号</a>
+        <a href="#charts">图表模块</a>
+        <a href="#percentile">历史分位</a>
+        <a href="#notes">结论摘要</a>
+      </nav>
+      <a class="account-link" href="#top">摸鱼呈现</a>
+    </header>
+
+    <main id="top" class="dashboard-shell">
+      <section class="overview-band" aria-label="市场情绪总览">
+        <div class="overview-title">
+          <p>A股市场情绪监测</p>
+          <h1>一张图看懂市场情绪、资金流向与动能结构</h1>
+        </div>
+        <div class="metric-strip" aria-label="关键指标">
+          <article class="metric-card">
+            <span>当前情绪</span>
+            <strong>63%</strong>
+            <em class="state neutral">中性偏热</em>
+          </article>
+          <article class="metric-card">
+            <span>更新日期</span>
+            <strong>2026-06-26</strong>
+            <em>交易日数据</em>
+          </article>
+          <article class="metric-card">
+            <span>高热阈值</span>
+            <strong>80%</strong>
+            <em class="state hot">风险提示</em>
+          </article>
+          <article class="metric-card">
+            <span>低迷阈值</span>
+            <strong>30%</strong>
+            <em class="state cool">观察区间</em>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace-tabs" aria-label="视图切换">
+        <button class="tab-button active" data-page="page-1">情绪指标</button>
+        <button class="tab-button" data-page="page-2">资金流向</button>
+        <button class="tab-button" data-page="page-3">投资者预期</button>
+        <button class="tab-button" data-page="page-4">市场动能</button>
+        <button class="tab-button" data-page="page-5">历史复盘</button>
+      </section>
+
+      <section id="page-1" class="page active" aria-label="情绪指标主视图">
+        <section id="signals" class="module module--wide signal-module">
+          <div class="module-header">
+            <div>
+              <p>Signal Matrix</p>
+              <h2>核心指标信号矩阵</h2>
+            </div>
+            <span class="module-meta">日度 / 分位 / 结构判断</span>
+          </div>
+          <div class="table-scroll">
+            <table class="signal-table">
+              <thead>
+                <tr>
+                  <th>指标大类</th>
+                  <th>细分指标</th>
+                  <th>当前分位</th>
+                  <th>状态</th>
+                  <th>信号说明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th rowspan="3">资金流向</th>
+                  <td>融资资金</td>
+                  <td>100%</td>
+                  <td><span class="tag tag-hot">偏热</span></td>
+                  <td>场内资金活跃度处于高位，短期交易热度较强。</td>
+                </tr>
+                <tr>
+                  <td>外资资金成交额</td>
+                  <td>99%</td>
+                  <td><span class="tag tag-hot">偏热</span></td>
+                  <td>外资成交参与度偏高，对市场流动性形成支撑。</td>
+                </tr>
+                <tr>
+                  <td>行业 ETF 净申购</td>
+                  <td>23%</td>
+                  <td><span class="tag tag-cool">偏冷</span></td>
+                  <td>行业方向配置强度仍在低位，结构性分化明显。</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">情绪预期</th>
+                  <td>沪深300ETF隐含波动率</td>
+                  <td>91%</td>
+                  <td><span class="tag tag-hot">偏热</span></td>
+                  <td>期权隐波走高，市场预期波动加大。</td>
+                </tr>
+                <tr>
+                  <td>持仓 PCR</td>
+                  <td>45%</td>
+                  <td><span class="tag tag-mid">中性</span></td>
+                  <td>投资者结构变化尚未形成单边信号。</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">市场动能</th>
+                  <td>MACD</td>
+                  <td>85%</td>
+                  <td><span class="tag tag-hot">偏热</span></td>
+                  <td>趋势动能较强，但需观察高位钝化风险。</td>
+                </tr>
+                <tr>
+                  <td>乖离率</td>
+                  <td>60%</td>
+                  <td><span class="tag tag-mid">中性</span></td>
+                  <td>指数偏离均线程度适中，尚未进入极端区间。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="notes" class="insight-grid" aria-label="结论摘要">
+          <article class="module insight-card">
+            <span class="section-badge">市场判断</span>
+            <h2>情绪处于中性偏热区间</h2>
+            <p>综合资金流向、投资者预期与市场动能，当前市场情绪未进入极端高热，但部分资金和动能指标已经处于较高分位。</p>
+          </article>
+          <article class="module insight-card">
+            <span class="section-badge">资金面</span>
+            <h2>交易活跃度较强</h2>
+            <p>融资资金和外资成交额分位偏高，说明市场参与度上升；行业 ETF 净申购仍偏弱，结构性机会更值得跟踪。</p>
+          </article>
+          <article class="module insight-card">
+            <span class="section-badge">风险提示</span>
+            <h2>避免追高单一方向</h2>
+            <p>当情绪继续上行并接近高热区间时，需要重点观察波动率、成交拥挤度和趋势动能是否同步转弱。</p>
+          </article>
+        </section>
+
+        <section id="charts" class="chart-grid" aria-label="图表模块">
+          <article class="module chart-module chart-module--wide">
+            <div class="module-header">
+              <div>
+                <p>Overview</p>
+                <h2>市场情绪与万得全A走势</h2>
+              </div>
+              <span class="module-meta">可拖动时间轴</span>
+            </div>
+            <div class="chart-frame chart-frame--centered">
+              <div id="top-chart" class="plotly-graph-div"></div>
+            </div>
+          </article>
+
+          <article class="module chart-module">
+            <div class="module-header">
+              <div>
+                <p>Backtest</p>
+                <h2>高热 / 低迷信号回测</h2>
+              </div>
+            </div>
+            <div class="chart-frame chart-frame--centered">
+              <div id="signal-backtest-chart" class="plotly-graph-div"></div>
+            </div>
+          </article>
+
+          <article class="module chart-module">
+            <div class="module-header">
+              <div>
+                <p>Gauge</p>
+                <h2>分项情绪仪表盘</h2>
+              </div>
+            </div>
+            <div class="chart-frame chart-frame--centered chart-frame--tall">
+              <div id="gauge-chart" class="plotly-graph-div"></div>
+            </div>
+          </article>
+        </section>
+
+        <section id="percentile" class="module percentile-module" aria-label="历史分位查询">
+          <div class="module-header">
+            <div>
+              <p>History</p>
+              <h2>历史分位查询</h2>
+            </div>
+            <span class="module-meta" id="dateText"></span>
+          </div>
+          <div class="date-tools">
+            <input id="dateSlider" type="range" min="0" value="0" aria-label="选择日期">
+            <label>
+              <span>跳转日期</span>
+              <input id="dateInput" type="text" placeholder="YYYY-MM-DD">
+            </label>
+            <button id="jumpButton" type="button">跳转</button>
+          </div>
+          <div id="dateMsg" class="date-message"></div>
+          <div id="percentile-table" class="table-scroll"></div>
+        </section>
+      </section>
+
+      <section id="page-2" class="page module placeholder-page">
+        <h2>资金流向</h2>
+        <p>先空着</p>
+      </section>
+      <section id="page-3" class="page module placeholder-page">
+        <h2>投资者预期</h2>
+        <p>先空着</p>
+      </section>
+      <section id="page-4" class="page module placeholder-page">
+        <h2>市场动能</h2>
+        <p>先空着</p>
+      </section>
+      <section id="page-5" class="page module placeholder-page">
+        <h2>历史复盘</h2>
+        <p>先空着</p>
+      </section>
+    </main>
+
+    <script src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
