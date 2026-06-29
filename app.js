@@ -267,3 +267,43 @@ const tableData = [{"idx": 0, "date": "2016-01-04", "html": "\n    <div class=\"
     button.addEventListener('click', function () { setTimeout(resizeCharts, 80); });
   });
 })();
+
+(function () {
+  function arrangeMainDashboard() {
+    var signals = document.getElementById('signals');
+    var percentile = document.getElementById('percentile');
+    var dateTools = document.querySelector('.date-tools');
+    var dateMessage = document.getElementById('dateMsg');
+
+    if (signals && dateTools && !signals.contains(dateTools)) {
+      var tableWrap = signals.querySelector('.table-scroll');
+      signals.insertBefore(dateTools, tableWrap);
+
+      if (dateMessage) {
+        signals.insertBefore(dateMessage, tableWrap);
+      }
+    }
+
+    var titles = [
+      { selector: '#charts article:nth-child(1) .module-header h2', text: '市场情绪与万得全A走势' },
+      { selector: '#signals .module-header h2', text: '核心指标信号矩阵' },
+      { selector: '#percentile .module-header h2', text: '历史分位查询' },
+      { selector: '#charts article:nth-child(3) .module-header h2', text: '分项情绪仪表盘' },
+      { selector: '#charts article:nth-child(2) .module-header h2', text: '高热 / 低迷信号回测' }
+    ];
+
+    titles.forEach(function (item) {
+      var el = document.querySelector(item.selector);
+      if (el) {
+        el.textContent = item.text;
+      }
+    });
+
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', arrangeMainDashboard);
+  } else {
+    arrangeMainDashboard();
+  }
+})();

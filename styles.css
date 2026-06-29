@@ -102,7 +102,7 @@ input {
 .logo-image {
   display: block;
   width: 100%;
-  max-width: 353px;
+  max-width: 362px;
   height: 63px;
   object-fit: contain;
 }
@@ -416,6 +416,41 @@ input {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
+}
+
+#page-1.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#page-1.active #charts {
+  display: contents;
+}
+
+#page-1.active #charts .chart-module--wide {
+  order: 1;
+}
+
+#page-1.active #signals {
+  order: 2;
+}
+
+#page-1.active #percentile {
+  order: 3;
+  margin-top: 0;
+}
+
+#page-1.active #charts article:nth-child(3) {
+  order: 4;
+}
+
+#page-1.active #charts article:nth-child(2) {
+  order: 5;
+}
+
+#page-1.active #notes {
+  display: none;
 }
 
 .chart-module {
