@@ -106,7 +106,10 @@
       sectionHeader.appendChild(createElement("p", "", group.caption));
       section.appendChild(sectionHeader);
 
-      var grid = createElement("div", "macro-chart-grid" + (group.charts.length === 1 ? " is-single" : ""));
+      var gridClass = "macro-chart-grid";
+      if (group.charts.length === 1) gridClass += " is-single";
+      if (group.charts.length > 1 && group.charts.length % 2 === 1) gridClass += " is-odd";
+      var grid = createElement("div", gridClass);
       group.charts.forEach(function (chart) {
         var cardClass = "macro-chart-card";
         if (chart.x_mode === "category" && chart.kind === "bar") cardClass += " is-categorical";
