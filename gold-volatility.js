@@ -220,7 +220,7 @@
   function bind() {
     render();
     window.addEventListener("resize", resize);
-    document.querySelectorAll('[data-page-link="page-2"]').forEach(function (button) {
+  document.querySelectorAll('[data-page-link="page-2"], [data-page="page-2"]').forEach(function (button) {
       button.addEventListener("click", function () {
         window.setTimeout(resize, 100);
       });

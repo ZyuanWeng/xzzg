@@ -275,6 +275,11 @@ input {
   overflow-x: auto;
 }
 
+.dashboard-shell:not(.is-home) > .overview-band,
+.dashboard-shell:not(.is-home) > .workspace-tabs {
+  display: none;
+}
+
 .tab-button {
   display: inline-flex;
   align-items: center;
@@ -306,7 +311,10 @@ input {
 #percentile,
 #gauge-section,
 #backtest-section,
-#page-2 {
+#page-2,
+#page-3,
+#page-4,
+#page-5 {
   scroll-margin-top: 82px;
 }
 
@@ -593,9 +601,406 @@ input {
   color: var(--muted);
 }
 
+.research-page.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.research-page-intro {
+  padding: 24px;
+}
+
+.research-page-intro > p {
+  margin: 0 0 4px;
+  color: #285680;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.research-page-intro > h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.research-page-intro > span {
+  color: var(--muted);
+}
+
+.research-module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.research-module-grid article {
+  min-height: 168px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 38, 58, 0.04);
+}
+
+.research-module-grid article > span {
+  color: #b77b20;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.research-module-grid h3 {
+  margin: 20px 0 6px;
+  color: #17304d;
+  font-size: 18px;
+}
+
+.research-module-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .gold-page {
   padding: 0;
   background: transparent;
+}
+
+.gold-page.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gold-model-intro {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.gold-model-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.gold-model-titlebar p {
+  margin: 0 0 4px;
+  color: #9a6518;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.gold-model-titlebar h2 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.gold-model-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.model-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 11px;
+  color: #1f5fae;
+  background: #edf4ff;
+  border: 1px solid #cdddf3;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.gold-model-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.gold-model-date span {
+  min-width: 92px;
+  padding: 5px 9px;
+  color: #65748a;
+  background: #f5f7fa;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.gold-method-list {
+  display: grid;
+  gap: 7px;
+  padding: 13px 20px 15px;
+  margin: 0;
+  color: #1e3e65;
+  background: #f2f7fd;
+}
+
+.gold-method-list div {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.gold-method-list dt {
+  font-weight: 800;
+}
+
+.gold-method-list dd {
+  margin: 0;
+}
+
+.gold-model-grid {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.92fr) minmax(560px, 1.45fr);
+  gap: 12px;
+}
+
+.gold-conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gold-conclusion-card,
+.gold-explanation-card,
+.gold-timing-chart-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 38, 58, 0.04);
+}
+
+.gold-conclusion-card,
+.gold-explanation-card {
+  overflow: hidden;
+}
+
+.gold-explanation-card {
+  grid-column: 1 / -1;
+}
+
+.gold-card-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 8px 12px;
+  background: #fff6e5;
+  border-bottom: 1px solid #f1dfbf;
+}
+
+.gold-card-title > span {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 7px;
+  color: #fff;
+  background: #b9781c;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.gold-card-title h3 {
+  margin: 0;
+  color: #1d2e43;
+  font-size: 15px;
+}
+
+.gold-conclusion-card dl {
+  display: grid;
+  gap: 10px;
+  padding: 13px;
+  margin: 0;
+}
+
+.gold-conclusion-card dl div {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.gold-conclusion-card dt {
+  color: #1d2e43;
+  font-weight: 800;
+}
+
+.gold-conclusion-card dd {
+  margin: 0;
+  color: #516176;
+}
+
+.signal-pending,
+.gold-signal-table td span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 1px 8px;
+  color: #627187;
+  background: #eef1f5;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.gold-explanation-card p {
+  min-height: 76px;
+  padding: 14px;
+  margin: 0;
+  color: #405169;
+  line-height: 1.8;
+}
+
+.gold-timing-chart-panel {
+  min-width: 0;
+  padding: 14px 16px 16px;
+}
+
+.gold-chart-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+}
+
+.chart-kicker {
+  color: #9a6518;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.gold-chart-toolbar h3 {
+  margin: 2px 0 0;
+  color: #19324f;
+  font-size: 16px;
+}
+
+.period-switch {
+  display: flex;
+  gap: 5px;
+}
+
+.period-switch button {
+  height: 29px;
+  padding: 0 10px;
+  color: #53647a;
+  background: #f4f6f9;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.period-switch button.active {
+  color: #fff;
+  background: #2768bd;
+  border-color: #2768bd;
+}
+
+.gold-empty-chart {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 340px;
+  color: #97a2b2;
+  background-color: #fff;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 67px, #edf1f5 68px);
+  border-bottom: 1px solid #9fb0c4;
+  border-left: 1px solid #9fb0c4;
+}
+
+.gold-empty-chart span {
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+}
+
+.gold-signal-module {
+  overflow: hidden;
+}
+
+.gold-signal-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.gold-signal-table th,
+.gold-signal-table td {
+  height: 36px;
+  padding: 6px 12px;
+  border: 1px solid #dfe5ed;
+  text-align: left;
+}
+
+.gold-signal-table thead th {
+  color: #17283c;
+  background: #eef2f7;
+  font-weight: 800;
+}
+
+.gold-signal-table tbody th {
+  width: 150px;
+  color: #203a5a;
+  background: #f7f9fc;
+  font-weight: 800;
+}
+
+.gold-signal-table tbody tr:nth-child(even) td {
+  background: #fafbfd;
+}
+
+.gold-signal-total th,
+.gold-signal-total td {
+  background: #fff6e4 !important;
+}
+
+.gold-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.gold-analysis-column {
+  padding: 12px 14px;
+  background: #f5f7fb;
+  border: 1px solid #e5eaf1;
+  border-radius: 5px;
+}
+
+.gold-analysis-column article + article {
+  margin-top: 12px;
+}
+
+.gold-analysis-column article > span {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  color: #fff;
+  background: #2d6fc4;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.gold-analysis-column p {
+  margin: 6px 0 0;
+  color: #3d4e64;
+}
+
+.gold-volatility-module {
+  margin-top: 0;
 }
 
 .gold-module {
@@ -700,8 +1105,13 @@ input {
 @media (max-width: 1180px) {
   .overview-band,
   .insight-grid,
-  .chart-grid {
+  .chart-grid,
+  .gold-model-grid {
     grid-template-columns: 1fr;
+  }
+
+  .research-module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .metric-strip {
@@ -710,6 +1120,14 @@ input {
 }
 
 @media (max-width: 720px) {
+  #top,
+  #page-2,
+  #page-3,
+  #page-4,
+  #page-5 {
+    scroll-margin-top: 166px;
+  }
+
   .topbar {
     height: auto;
     min-height: 58px;
@@ -762,6 +1180,40 @@ input {
   .metric-strip,
   .date-tools {
     grid-template-columns: 1fr;
+  }
+
+  .gold-model-titlebar,
+  .gold-chart-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .gold-model-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gold-conclusion-grid,
+  .gold-analysis-grid,
+  .research-module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gold-explanation-card {
+    grid-column: auto;
+  }
+
+  .period-switch {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .period-switch button {
+    flex: 0 0 auto;
+  }
+
+  .gold-empty-chart {
+    min-height: 260px;
   }
 
   .date-tools label {

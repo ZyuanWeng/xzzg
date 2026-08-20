@@ -278,9 +278,15 @@ window.PlotlyConfig = {MathJaxConfig: 'local'};
   var sectionLinks = document.querySelectorAll('.workspace-tabs .tab-button');
 
   function showPage(pageId) {
+    var shell = document.querySelector('.dashboard-shell');
+
     pages.forEach(function (page) {
       page.classList.remove('active');
     });
+
+    if (shell) {
+      shell.classList.toggle('is-home', pageId === 'page-1');
+    }
 
     var target = document.getElementById(pageId);
     if (target) {
@@ -332,9 +338,7 @@ window.PlotlyConfig = {MathJaxConfig: 'local'};
       showPage(this.getAttribute('data-page-link'));
       if (this.closest('.main-nav')) {
         setActiveMainNav(this);
-        if (this.getAttribute('data-page-link') === 'page-1') {
-          setActiveSection(this.getAttribute('href'));
-        }
+        setActiveSection(this.getAttribute('href'));
       } else if (this.classList.contains('logo')) {
         setActiveMainNav(homeNavLink);
         setActiveSection('#top');
@@ -344,8 +348,10 @@ window.PlotlyConfig = {MathJaxConfig: 'local'};
 
   sectionLinks.forEach(function (link) {
     link.addEventListener('click', function () {
-      showPage('page-1');
-      setActiveMainNav(homeNavLink);
+      var targetPage = this.getAttribute('data-page');
+      var matchingNav = document.querySelector('.main-nav a[data-page-link="' + targetPage + '"]');
+      showPage(targetPage);
+      setActiveMainNav(matchingNav || homeNavLink);
     });
   });
 })();

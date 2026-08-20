@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>兴证资管 - A股市场情绪指标</title>
-    <meta name="description" content="A股市场情绪指标、资金流向、投资者预期与市场动能展示。">
+    <title>兴证资管 - 固定收益与多元资产研究平台</title>
+    <meta name="description" content="覆盖黄金、宏观、固定收益与权益研究的多资产研究平台。">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -15,14 +15,14 @@
       <nav class="main-nav" aria-label="主导航">
         <a class="active" href="#top" data-page-link="page-1">首页</a>
         <a href="#page-2" data-page-link="page-2">黄金</a>
-        <a href="#market-trend" data-page-link="page-1">宏观</a>
-        <a href="#percentile" data-page-link="page-1">固收</a>
-        <a href="#notes" data-page-link="page-1">权益</a>
+        <a href="#page-3" data-page-link="page-3">宏观</a>
+        <a href="#page-4" data-page-link="page-4">固收</a>
+        <a href="#page-5" data-page-link="page-5">权益</a>
       </nav>
       <a class="account-link" href="#top">欢迎提意见</a>
     </header>
 
-    <main id="top" class="dashboard-shell">
+    <main id="top" class="dashboard-shell is-home">
       <section class="overview-band" aria-label="市场情绪总览">
         <div class="overview-title">
           <p>A股市场情绪监测</p>
@@ -209,8 +209,114 @@
         </section>
       </section>
 
-      <section id="page-2" class="page gold-page" aria-label="黄金隐含波动率">
-        <div class="module gold-module">
+      <section id="page-2" class="page gold-page" aria-label="黄金研究">
+        <section class="module gold-model-intro">
+          <div class="gold-model-titlebar">
+            <div>
+              <p>Gold Indicators</p>
+              <h2>黄金指标</h2>
+            </div>
+            <div class="gold-model-tools">
+              <span class="model-chip">模型说明</span>
+              <label class="gold-model-date">日期 <span>待接入</span></label>
+            </div>
+          </div>
+          <dl class="gold-method-list">
+            <div><dt>更新节奏</dt><dd>周度观点与月度观点</dd></div>
+            <div><dt>指标框架</dt><dd>宏观、通胀、利率、资金与市场情绪</dd></div>
+            <div><dt>模型输出</dt><dd>数据接入后展示方向、强度和结论说明</dd></div>
+          </dl>
+        </section>
+
+        <section class="gold-model-grid" aria-label="黄金择时模型概览">
+          <div class="gold-conclusion-grid">
+            <article class="gold-conclusion-card">
+              <div class="gold-card-title"><span>周度</span><h3>本周结论</h3></div>
+              <dl>
+                <div><dt>当前信号</dt><dd><span class="signal-pending">待更新</span></dd></div>
+                <div><dt>场内建议</dt><dd>--</dd></div>
+                <div><dt>场外建议</dt><dd>--</dd></div>
+                <div><dt>业绩回溯</dt><dd>--</dd></div>
+              </dl>
+            </article>
+            <article class="gold-conclusion-card">
+              <div class="gold-card-title"><span>月度</span><h3>本月结论</h3></div>
+              <dl>
+                <div><dt>当前信号</dt><dd><span class="signal-pending">待更新</span></dd></div>
+                <div><dt>场内建议</dt><dd>--</dd></div>
+                <div><dt>场外建议</dt><dd>--</dd></div>
+                <div><dt>业绩回溯</dt><dd>--</dd></div>
+              </dl>
+            </article>
+            <article class="gold-explanation-card">
+              <div class="gold-card-title"><span>说明</span><h3>结论说明</h3></div>
+              <p>模型数据尚未接入。后续将在这里展示周度、月度信号的主要驱动因素，以及配置观点与风险提示。</p>
+            </article>
+          </div>
+
+          <article class="gold-timing-chart-panel">
+            <div class="gold-chart-toolbar">
+              <div><span class="chart-kicker">MODEL CHART</span><h3>黄金xx走势</h3></div>
+              <div class="period-switch" aria-label="时间范围占位">
+                <button type="button" disabled>今年以来</button>
+                <button type="button" disabled>近一年</button>
+                <button type="button" disabled>近三年</button>
+                <button type="button" disabled>近五年</button>
+                <button type="button" class="active" disabled>全部</button>
+              </div>
+            </div>
+            <div class="gold-empty-chart" role="img" aria-label="黄金择时折线图数据待接入">
+              <span>折线数据待接入</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="module gold-signal-module" aria-label="黄金多周期信号矩阵">
+          <div class="module-header">
+            <div>
+              <p>Signal Matrix</p>
+              <h2>黄金多周期信号矩阵</h2>
+            </div>
+            <span class="module-meta">周度 / 月度 / 多周期</span>
+          </div>
+          <div class="table-scroll">
+            <table class="gold-signal-table">
+              <thead>
+                <tr>
+                  <th>指标大类</th>
+                  <th>细分指标</th>
+                  <th>周度</th>
+                  <th>上周周度</th>
+                  <th>月度</th>
+                  <th>上月月度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th rowspan="2">宏观环境</th><td>模块一</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+                <tr><td>模块二</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+                <tr><th rowspan="2">资金与持仓</th><td>模块三</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+                <tr><td>模块四</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+                <tr><th rowspan="2">估值与风险</th><td>模块五</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+                <tr><td>模块六</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+                <tr class="gold-signal-total"><th>综合信号</th><td>模型汇总</td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td><td><span>待更新</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="gold-analysis-grid">
+            <div class="gold-analysis-column">
+              <article><span>模块一</span><p>数据接入后展示对应指标的模型结论与变化。</p></article>
+              <article><span>模块二</span><p>数据接入后展示对应指标的模型结论与变化。</p></article>
+              <article><span>模块三</span><p>数据接入后展示对应指标的模型结论与变化。</p></article>
+            </div>
+            <div class="gold-analysis-column">
+              <article><span>模块四</span><p>数据接入后展示对应指标的模型结论与变化。</p></article>
+              <article><span>模块五</span><p>数据接入后展示对应指标的模型结论与变化。</p></article>
+              <article><span>综合判断</span><p>模型信号、配置建议与风险提示将在这里汇总。</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="module gold-module gold-volatility-module">
           <div class="module-header">
             <div>
               <p>Gold Volatility</p>
@@ -223,19 +329,46 @@
             <div id="gold-volatility-chart" class="plotly-graph-div"></div>
           </div>
           <p class="gold-data-note">数据来源：Wind，兴证资管</p>
+        </section>
+      </section>
+
+      <section id="page-3" class="page research-page" aria-label="宏观研究">
+        <div class="module research-page-intro">
+          <p>Macro Research</p>
+          <h2>宏观研究</h2>
+          <span>研究框架已建立，内容待接入。</span>
+        </div>
+        <div class="research-module-grid">
+          <article><span>01</span><h3>模块一</h3><p>内容待接入</p></article>
+          <article><span>02</span><h3>模块二</h3><p>内容待接入</p></article>
+          <article><span>03</span><h3>模块三</h3><p>内容待接入</p></article>
         </div>
       </section>
-      <section id="page-3" class="page module placeholder-page">
-        <h2>投资者预期</h2>
-        <p>先空着</p>
+
+      <section id="page-4" class="page research-page" aria-label="固定收益研究">
+        <div class="module research-page-intro">
+          <p>Fixed Income</p>
+          <h2>固定收益研究</h2>
+          <span>研究框架已建立，内容待接入。</span>
+        </div>
+        <div class="research-module-grid">
+          <article><span>01</span><h3>模块一</h3><p>内容待接入</p></article>
+          <article><span>02</span><h3>模块二</h3><p>内容待接入</p></article>
+          <article><span>03</span><h3>模块三</h3><p>内容待接入</p></article>
+        </div>
       </section>
-      <section id="page-4" class="page module placeholder-page">
-        <h2>市场动能</h2>
-        <p>先空着</p>
-      </section>
-      <section id="page-5" class="page module placeholder-page">
-        <h2>历史复盘</h2>
-        <p>先空着</p>
+
+      <section id="page-5" class="page research-page" aria-label="权益研究">
+        <div class="module research-page-intro">
+          <p>Equity Research</p>
+          <h2>权益研究</h2>
+          <span>研究框架已建立，内容待接入。</span>
+        </div>
+        <div class="research-module-grid">
+          <article><span>01</span><h3>模块一</h3><p>内容待接入</p></article>
+          <article><span>02</span><h3>模块二</h3><p>内容待接入</p></article>
+          <article><span>03</span><h3>模块三</h3><p>内容待接入</p></article>
+        </div>
       </section>
     </main>
 
