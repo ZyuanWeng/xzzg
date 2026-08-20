@@ -56,8 +56,8 @@ input {
   height: 58px;
   color: #fff;
   background:
-    radial-gradient(circle at 82% -48%, rgba(76, 136, 204, 0.52), transparent 30%),
-    linear-gradient(90deg, var(--nav-deep), var(--nav));
+    radial-gradient(circle at 18% -48%, rgba(76, 136, 204, 0.52), transparent 30%),
+    linear-gradient(90deg, var(--nav), var(--nav-deep));
   box-shadow: 0 2px 8px rgba(18, 37, 64, 0.28);
 }
 
@@ -266,6 +266,9 @@ input {
 }
 
 .tab-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 32px;
   padding: 0 15px;
   color: #23415f;
@@ -285,6 +288,16 @@ input {
   color: #fff;
   background: var(--blue);
   border-color: var(--blue);
+}
+
+#top,
+#market-trend,
+#signals,
+#percentile,
+#gauge-section,
+#backtest-section,
+#page-2 {
+  scroll-margin-top: 82px;
 }
 
 .page {
@@ -568,6 +581,110 @@ input {
 .placeholder-page p {
   margin: 8px 0 0;
   color: var(--muted);
+}
+
+.gold-page {
+  padding: 0;
+  background: transparent;
+}
+
+.gold-module {
+  padding: 22px 24px 18px;
+}
+
+.gold-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 2px 0 8px;
+  color: #334e70;
+  font-size: 13px;
+}
+
+.gold-summary-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-line,
+.legend-swatch,
+.legend-signal {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.legend-line {
+  width: 26px;
+  height: 0;
+  border-top: 3px solid #b7791f;
+}
+
+.legend-swatch {
+  width: 22px;
+  height: 12px;
+  border: 1px solid rgba(216, 139, 34, 0.38);
+  background: rgba(241, 184, 77, 0.24);
+}
+
+.legend-signal {
+  width: 26px;
+  height: 12px;
+  border-bottom: 2px solid #d97706;
+}
+
+.gold-chart-frame {
+  position: relative;
+  min-height: 560px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gold-axis-label {
+  position: absolute;
+  left: 18px;
+  z-index: 2;
+  color: #203552;
+  font-size: 14px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.gold-axis-label--gvz {
+  top: 50%;
+}
+
+#gold-volatility-chart {
+  width: 100%;
+  min-height: 560px;
+}
+
+.gold-data-note {
+  margin: 8px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .gold-module {
+    padding: 18px 12px 14px;
+  }
+
+  .gold-summary {
+    gap: 10px 16px;
+    font-size: 12px;
+  }
+
+  .gold-chart-frame,
+  #gold-volatility-chart {
+    min-height: 500px;
+  }
+
+  .gold-axis-label {
+    left: 10px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 1180px) {
