@@ -333,15 +333,15 @@
       </section>
 
       <section id="page-3" class="page research-page" aria-label="宏观研究">
-        <div class="module research-page-intro">
+        <div class="module research-page-intro macro-page-intro">
           <p>Macro Research</p>
-          <h2>宏观研究</h2>
-          <span>研究框架已建立，内容待接入。</span>
+          <h2>国内宏观经济监测</h2>
+          <span>增长、生产、价格与信用条件</span>
+          <strong id="macroUpdateDate" class="macro-intro-date">数据读取中</strong>
         </div>
-        <div class="research-module-grid">
-          <article><span>01</span><h3>模块一</h3><p>内容待接入</p></article>
-          <article><span>02</span><h3>模块二</h3><p>内容待接入</p></article>
-          <article><span>03</span><h3>模块三</h3><p>内容待接入</p></article>
+        <nav id="macroCategoryNav" class="macro-category-nav" aria-label="宏观图表分类"></nav>
+        <div id="macroResearchContent" class="macro-research-content">
+          <p class="macro-loading">正在载入宏观图表数据...</p>
         </div>
       </section>
 
@@ -374,7 +374,9 @@
 
     <script src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>
     <script src="gold-volatility-data.js" defer></script>
+    <script src="macro-data.js" defer></script>
     <script src="app.js" defer></script>
     <script src="gold-volatility.js" defer></script>
+    <script src="macro-charts.js" defer></script>
   </body>
 </html>

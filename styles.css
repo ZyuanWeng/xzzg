@@ -660,6 +660,227 @@ input {
   color: var(--muted);
 }
 
+.macro-page-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 24px;
+}
+
+.macro-page-intro > p,
+.macro-page-intro > h2,
+.macro-page-intro > span {
+  grid-column: 1;
+}
+
+.macro-intro-date {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: center;
+  justify-self: end;
+  color: #516b88;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .macro-page-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .macro-intro-date {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: 10px;
+  }
+}
+
+.macro-category-nav {
+  display: flex;
+  gap: 6px;
+  padding: 9px 10px;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 38, 58, 0.04);
+}
+
+.macro-category-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 78px;
+  height: 34px;
+  padding: 0 16px;
+  color: #29496c;
+  background: #f4f7fb;
+  border: 1px solid #d5dfeb;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.macro-category-nav a:hover,
+.macro-category-nav a.active {
+  color: #fff;
+  background: #2767ad;
+  border-color: #2767ad;
+}
+
+.macro-research-content {
+  display: grid;
+  gap: 20px;
+}
+
+.macro-loading,
+.macro-error {
+  padding: 28px;
+  margin: 0;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.macro-error {
+  color: #a33a33;
+}
+
+.macro-category {
+  scroll-margin-top: 84px;
+}
+
+.macro-category-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 54px;
+  padding: 0 2px 9px;
+  border-bottom: 1px solid #cbd7e4;
+}
+
+.macro-category-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.macro-category-index {
+  color: #b57b20;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.macro-category-header h3 {
+  margin: 0;
+  color: #162f4d;
+  font-size: 20px;
+}
+
+.macro-category-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.macro-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.macro-chart-grid.is-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.macro-chart-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 38, 58, 0.05);
+}
+
+.macro-chart-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 54px;
+  padding: 10px 13px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.macro-chart-card-header h4 {
+  margin: 0;
+  color: #172f4c;
+  font-size: 15px;
+}
+
+.macro-chart-card-header p {
+  margin: 3px 0 0;
+  color: #8490a1;
+  font-size: 11px;
+}
+
+.macro-period-switch {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0;
+}
+
+.macro-period-switch button {
+  min-width: 43px;
+  height: 28px;
+  padding: 0 9px;
+  color: #315271;
+  background: #fff;
+  border: 1px solid #c8d4e2;
+  border-right-width: 0;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.macro-period-switch button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.macro-period-switch button:last-child {
+  border-right-width: 1px;
+  border-radius: 0 4px 4px 0;
+}
+
+.macro-period-switch button.active {
+  color: #fff;
+  background: #2767ad;
+  border-color: #2767ad;
+}
+
+.macro-chart {
+  width: 100%;
+  min-height: 370px;
+}
+
+.macro-chart-card.is-categorical .macro-chart {
+  min-height: 430px;
+}
+
+.macro-source-note {
+  margin: -4px 2px 0;
+  color: #8a96a6;
+  font-size: 11px;
+}
+
 .gold-page {
   padding: 0;
   background: transparent;
@@ -1114,6 +1335,10 @@ input {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .macro-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
   .metric-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1197,6 +1422,35 @@ input {
   .gold-analysis-grid,
   .research-module-grid {
     grid-template-columns: 1fr;
+  }
+
+  .macro-category {
+    scroll-margin-top: 170px;
+  }
+
+  .macro-category-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .macro-chart-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .macro-period-switch {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .macro-period-switch button {
+    flex: 1 0 43px;
+  }
+
+  .macro-chart,
+  .macro-chart-card.is-categorical .macro-chart {
+    min-height: 340px;
   }
 
   .gold-explanation-card {
