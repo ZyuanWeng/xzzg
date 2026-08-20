@@ -68,7 +68,7 @@ input {
   place-items: center;
   width: 330px;
   flex: 0 0 330px;
-  padding: 0 20px;
+  padding: 0 10px;
   background: linear-gradient(90deg, rgba(7, 24, 42, 0.12), rgba(7, 24, 42, 0));
   border-right: 1px solid rgba(226, 237, 251, 0.1);
 }
@@ -105,9 +105,11 @@ input {
 .logo-image {
   display: block;
   width: 100%;
-  max-width: 362px;
-  height: 63px;
+  max-width: 310px;
+  height: 50px;
   object-fit: contain;
+  transform: translateY(3px);
+
 }
 
 .main-nav {
