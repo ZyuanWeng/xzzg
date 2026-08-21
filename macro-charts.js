@@ -107,6 +107,7 @@
       section.appendChild(sectionHeader);
 
       var gridClass = "macro-chart-grid";
+      if (group.id === "industry") gridClass += " is-stacked";
       if (group.charts.length === 1) gridClass += " is-single";
       if (group.charts.length > 1 && group.charts.length % 2 === 1) gridClass += " is-odd";
       var grid = createElement("div", gridClass);

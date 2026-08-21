@@ -1332,6 +1332,10 @@ input {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.macro-chart-grid.is-stacked {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .macro-chart-grid.is-odd .macro-chart-card:last-child {
   grid-column: 1 / -1;
 }
