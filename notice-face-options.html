@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>确认弹窗表情备选</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 48px 24px;
+        background: #eef2f7;
+        color: #17395e;
+        font-family: "Microsoft YaHei", Arial, sans-serif;
+      }
+      main { width: min(100%, 980px); margin: 0 auto; }
+      h1 { margin: 0; font-size: 24px; }
+      .lead { margin: 8px 0 30px; color: #6b788b; font-size: 14px; }
+      .options {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+      article {
+        display: grid;
+        place-items: center;
+        min-height: 240px;
+        padding: 26px 18px 22px;
+        background: #fff;
+        border: 1px solid #dfe5ee;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(21, 42, 68, .05);
+      }
+      article strong { margin-top: 22px; font-size: 15px; }
+      article span { margin-top: 5px; color: #8591a1; font-size: 11px; }
+      .face {
+        position: relative;
+        width: 104px;
+        height: 104px;
+        border: 1px solid #d7a33a;
+        border-radius: 50%;
+        background: #eab461;
+        box-shadow: inset 0 -7px 0 rgba(151, 91, 12, .1);
+      }
+      .eyes {
+        position: absolute;
+        top: 28px;
+        left: 19px;
+        display: flex;
+        gap: 13px;
+      }
+      .eye {
+        position: relative;
+        width: 26px;
+        height: 29px;
+        overflow: hidden;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .pupil {
+        position: absolute;
+        top: 11px;
+        left: 9px;
+        width: 9px;
+        height: 10px;
+        border-radius: 50%;
+        background: #17395e;
+      }
+      .mouth { position: absolute; left: 50%; transform: translateX(-50%); }
+      .brow {
+        position: absolute;
+        top: 23px;
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background: #9a671f;
+      }
+      .brow.left { left: 21px; transform: rotate(13deg); }
+      .brow.right { right: 21px; transform: rotate(-13deg); }
+
+      .face-a .mouth {
+        top: 70px;
+        width: 35px;
+        height: 18px;
+        border-top: 5px solid #84520f;
+        border-radius: 22px 22px 0 0;
+      }
+
+      .face-b .pupil { top: 13px; }
+      .face-b .brow.left { transform: rotate(-13deg); }
+      .face-b .brow.right { transform: rotate(13deg); }
+      .face-b .mouth {
+        top: 72px;
+        width: 28px;
+        height: 3px;
+        border-radius: 3px;
+        background: #84520f;
+        transform: translateX(-50%) rotate(-4deg);
+      }
+      .face-b .tear {
+        position: absolute;
+        top: 53px;
+        right: 21px;
+        width: 8px;
+        height: 13px;
+        border-radius: 7px 7px 8px 8px;
+        background: #67a9de;
+      }
+
+      .face-c .eye { height: 23px; }
+      .face-c .pupil { top: 13px; }
+      .face-c .mouth {
+        top: 72px;
+        width: 30px;
+        height: 4px;
+        border-radius: 4px;
+        background: #84520f;
+      }
+      .face-c .brow.left { transform: rotate(-13deg); }
+      .face-c .brow.right { transform: rotate(13deg); }
+
+      .face-d .mouth {
+        top: 70px;
+        width: 28px;
+        height: 14px;
+        border: 4px solid #84520f;
+        border-bottom: 0;
+        border-radius: 50% 50% 0 0;
+      }
+      .face-d .tear.left { left: 18px; }
+      .face-d .tear.right { right: 18px; }
+      .face-d .tear {
+        position: absolute;
+        top: 55px;
+        width: 7px;
+        height: 12px;
+        border-radius: 7px 7px 8px 8px;
+        background: #67a9de;
+      }
+
+      @media (max-width: 760px) {
+        .options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 420px) {
+        body { padding: 28px 14px; }
+        .options { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>“不行”按钮表情备选</h1>
+      <p class="lead">正式弹窗仍保持原样，这里仅用于选择视觉方案。</p>
+      <section class="options" aria-label="难受表情备选方案">
+        <article>
+          <div class="face face-a" aria-hidden="true">
+            <i class="brow left"></i><i class="brow right"></i>
+            <div class="eyes"><i class="eye"><b class="pupil"></b></i><i class="eye"><b class="pupil"></b></i></div>
+            <i class="mouth"></i>
+          </div>
+          <strong>A · 委屈</strong><span>当前方案的加强版</span>
+        </article>
+        <article>
+          <div class="face face-b" aria-hidden="true">
+            <i class="brow left"></i><i class="brow right"></i>
+            <div class="eyes"><i class="eye"><b class="pupil"></b></i><i class="eye"><b class="pupil"></b></i></div>
+            <i class="tear"></i><i class="mouth"></i>
+          </div>
+          <strong>B · 噙泪</strong><span>克制但更有戏</span>
+        </article>
+        <article>
+          <div class="face face-c" aria-hidden="true">
+            <i class="brow left"></i><i class="brow right"></i>
+            <div class="eyes"><i class="eye"><b class="pupil"></b></i><i class="eye"><b class="pupil"></b></i></div>
+            <i class="mouth"></i>
+          </div>
+          <strong>C · 失落</strong><span>低头抿嘴，比较含蓄</span>
+        </article>
+        <article>
+          <div class="face face-d" aria-hidden="true">
+            <i class="brow left"></i><i class="brow right"></i>
+            <div class="eyes"><i class="eye"><b class="pupil"></b></i><i class="eye"><b class="pupil"></b></i></div>
+            <i class="tear left"></i><i class="tear right"></i><i class="mouth"></i>
+          </div>
+          <strong>D · 快哭了</strong><span>最明显，也最有趣</span>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
