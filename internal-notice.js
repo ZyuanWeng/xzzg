@@ -2,8 +2,8 @@
   "use strict";
 
   var storageKey = "internal-development-notice";
-  var acceptedValue = "accepted-v2";
-  var testMode = false;
+  var acceptedValue = "accepted-v1";
+  var testMode = true;
   var root = document.documentElement;
   var accepted = false;
 
