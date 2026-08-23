@@ -799,11 +799,15 @@ input {
 }
 
 .workspace-tabs {
+  position: sticky;
+  top: 66px;
+  z-index: 40;
   display: flex;
   gap: 8px;
   padding: 10px;
   margin-bottom: 12px;
   overflow-x: auto;
+  box-shadow: 0 5px 14px rgba(23, 38, 58, 0.1);
 }
 
 .dashboard-shell:not(.is-home) > .overview-band,
@@ -848,6 +852,14 @@ input {
 #page-5,
 #page-6 {
   scroll-margin-top: 82px;
+}
+
+#market-trend,
+#signals,
+#percentile,
+#gauge-section,
+#backtest-section {
+  scroll-margin-top: 128px;
 }
 
 .page {
@@ -1229,6 +1241,9 @@ input {
 }
 
 .macro-category-nav {
+  position: sticky;
+  top: 66px;
+  z-index: 40;
   display: flex;
   gap: 6px;
   padding: 9px 10px;
@@ -1236,7 +1251,7 @@ input {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(23, 38, 58, 0.04);
+  box-shadow: 0 5px 14px rgba(23, 38, 58, 0.1);
 }
 
 .macro-category-nav a {
@@ -1284,7 +1299,7 @@ input {
 }
 
 .macro-category {
-  scroll-margin-top: 84px;
+  scroll-margin-top: 128px;
 }
 
 .macro-category-header {
@@ -1900,6 +1915,20 @@ input {
     flex-wrap: wrap;
   }
 
+  .workspace-tabs,
+  .macro-category-nav {
+    top: 166px;
+  }
+
+  #market-trend,
+  #signals,
+  #percentile,
+  #gauge-section,
+#backtest-section,
+.macro-category {
+    scroll-margin-top: 248px;
+  }
+
   .logo {
     width: 100%;
     flex: 0 0 100%;
@@ -1963,10 +1992,6 @@ input {
   .gold-analysis-grid,
   .research-module-grid {
     grid-template-columns: 1fr;
-  }
-
-  .macro-category {
-    scroll-margin-top: 170px;
   }
 
   .macro-category-header {
