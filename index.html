@@ -318,20 +318,150 @@
           </div>
         </section>
 
-        <section class="module gold-module gold-volatility-module">
+        <section class="module gold-signal-frequency-module" aria-labelledby="monthly-signal-title">
           <div class="module-header">
             <div>
-              <p>Gold Volatility</p>
-              <h2>黄金隐含波动率与信号</h2>
+              <p>Monthly Indicators</p>
+              <h2 id="monthly-signal-title">月频指标与信号</h2>
             </div>
-            <span id="goldUpdateDate" class="module-meta">数据更新至</span>
+            <span id="monthlySignalUpdate" class="module-meta">数据更新至</span>
           </div>
-          <div class="chart-frame gold-chart-frame">
-            <span class="gold-axis-label gold-axis-label--gvz" aria-hidden="true">GVZ</span>
-            <div id="gold-volatility-chart" class="plotly-graph-div"></div>
+          <div class="gold-signal-chart-grid">
+            <article class="gold-signal-chart-card">
+              <h3>GPR 月度值与信号</h3>
+              <div id="monthly-gpr" class="gold-signal-chart" aria-label="GPR月度值与信号图"></div>
+            </article>
+            <article class="gold-signal-chart-card">
+              <h3>COMEX 黄金库存与信号</h3>
+              <div id="monthly-inventory" class="gold-signal-chart" aria-label="COMEX黄金库存与信号图"></div>
+            </article>
+            <article class="gold-signal-chart-card gold-signal-chart-card--wide">
+              <h3>黄金 ETF 合计持有量与信号</h3>
+              <div id="monthly-etf" class="gold-signal-chart" aria-label="黄金ETF合计持有量与信号图"></div>
+            </article>
           </div>
-          <p class="gold-data-note">数据来源：Wind，兴证资管</p>
+          <p class="gold-signal-source">数据来源：Wind，兴证资管</p>
         </section>
+
+        <section class="module gold-signal-frequency-module" aria-labelledby="daily-signal-title">
+          <div class="module-header">
+            <div>
+              <p>Daily Indicators</p>
+              <h2 id="daily-signal-title">日频指标与信号</h2>
+            </div>
+            <span id="dailySignalUpdate" class="module-meta">数据更新至</span>
+          </div>
+          <div class="gold-signal-chart-grid">
+            <article class="gold-signal-chart-card">
+              <h3>GVZ 与高波状态</h3>
+              <div id="daily-gvz" class="gold-signal-chart" aria-label="GVZ与高波状态图"></div>
+            </article>
+            <article class="gold-signal-chart-card">
+              <h3>期现基差 MA60 与信号</h3>
+              <div id="daily-basis" class="gold-signal-chart" aria-label="期现基差MA60与信号图"></div>
+            </article>
+            <article class="gold-signal-chart-card gold-signal-chart-card--wide">
+              <h3>黄金趋势均线与信号</h3>
+              <div id="daily-trend" class="gold-signal-chart" aria-label="黄金趋势均线与信号图"></div>
+            </article>
+          </div>
+          <p class="gold-signal-source">数据来源：Wind，兴证资管</p>
+        </section>
+
+        <div id="goldEtfDashboard" class="wgc-dashboard" aria-label="全球黄金ETF持仓与资金流动">
+          <div class="wgc-dashboard-body">
+            <section class="module wgc-section" id="flowSection">
+              <div class="wgc-section-heading">
+                <div>
+                  <p class="wgc-eyebrow">Regional Flow</p>
+                  <h3>黄金 ETF 区域流动</h3>
+                </div>
+                <span class="module-meta">数据截至 2026-08-14</span>
+              </div>
+              <div class="controls-row">
+                <div class="toggle" id="flowUnit" aria-label="资金流动单位">
+                  <button type="button" data-v="tonnes">吨</button>
+                  <button type="button" data-v="usd" class="active">美元</button>
+                </div>
+                <div class="toggle period" id="flowFreq" aria-label="资金流动周期">
+                  <button type="button" data-v="Yearly">每年</button>
+                  <button type="button" data-v="Quarterly">季度</button>
+                  <button type="button" data-v="Monthly">月度</button>
+                  <button type="button" data-v="Weekly" class="active">每周</button>
+                </div>
+              </div>
+              <div class="axis-head"><span id="flowLeftLabel">基金流量（十亿美元）</span><span>黄金（美元/盎司）</span></div>
+              <div id="flowChart" class="chart-box"></div>
+              <div class="legend-boxes" id="flowLegend"></div>
+              <div class="source-line">数据来源：Bloomberg、WGC、兴证资管</div>
+            </section>
+
+            <section class="module wgc-section" id="holdSection">
+              <div class="wgc-section-heading">
+                <div>
+                  <p class="wgc-eyebrow">Assets Under Management</p>
+                  <h3>黄金 ETF 资产管理规模</h3>
+                </div>
+                <span class="module-meta">数据截至 2026-08-14</span>
+              </div>
+              <div class="controls-row">
+                <div class="toggle" id="holdUnit" aria-label="资产管理单位">
+                  <button type="button" data-v="tonnes" class="active">吨</button>
+                  <button type="button" data-v="usd">美元</button>
+                </div>
+                <div class="toggle period" id="holdFreq" aria-label="资产管理周期">
+                  <button type="button" data-v="Yearly">每年</button>
+                  <button type="button" data-v="Quarterly">季度</button>
+                  <button type="button" data-v="Monthly">每月</button>
+                  <button type="button" data-v="Weekly" class="active">每周</button>
+                </div>
+              </div>
+              <div class="axis-head"><span id="holdLeftLabel">持有量（吨）</span><span>黄金（美元/盎司）</span></div>
+              <div id="holdChart" class="chart-box"></div>
+              <div class="legend-boxes" id="holdLegend"></div>
+              <div class="source-line">数据来源：Bloomberg、WGC、兴证资管</div>
+            </section>
+
+            <section class="module wgc-section table-module" id="tableSection">
+              <div class="wgc-section-heading">
+                <div>
+                  <p class="wgc-eyebrow">Regional Data</p>
+                  <h3>区域流动数据</h3>
+                </div>
+              </div>
+              <div class="period-and-date">
+                <div class="period-tabs" id="periodTabs">
+                  <button type="button" class="period-tab" data-v="Year to date"><span class="ptitle">今年以来</span><span class="psub" data-sub="Year to date"></span></button>
+                  <button type="button" class="period-tab" data-v="Monthly"><span class="ptitle">月度</span><span class="psub" data-sub="Monthly"></span></button>
+                  <button type="button" class="period-tab" data-v="Quarterly"><span class="ptitle">季度</span><span class="psub" data-sub="Quarterly"></span></button>
+                  <button type="button" class="period-tab active" data-v="Weekly"><span class="ptitle">周度</span><span class="psub" data-sub="Weekly"></span></button>
+                </div>
+                <div>
+                  <div class="date-control">
+                    <label for="asOfDateBtn">截至日期</label>
+                    <div class="date-picker" id="datePicker">
+                      <input id="asOfDate" type="hidden">
+                      <button id="asOfDateBtn" class="date-display" type="button" aria-haspopup="dialog" aria-expanded="false">
+                        <span id="asOfDateText"></span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M7 3v4M17 3v4M3 9h18"></path></svg>
+                      </button>
+                      <div class="calendar-popover" id="calendarPopover" hidden>
+                        <div class="calendar-head"><button class="calendar-nav" id="calPrev" type="button" aria-label="上个月">‹</button><div class="calendar-title" id="calendarTitle"></div><button class="calendar-nav" id="calNext" type="button" aria-label="下个月">›</button></div>
+                        <div class="calendar-weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div>
+                        <div class="calendar-grid" id="calendarGrid"></div>
+                        <div class="calendar-note">仅可选择有 WGC 数据的日期</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="loadStatus" class="loading"></div>
+                </div>
+              </div>
+              <div class="table-title">分区域</div>
+              <div class="table-wrap"><table id="regionalTable"></table></div>
+              <div class="source-line">数据来源：Bloomberg、WGC、兴证资管</div>
+            </section>
+          </div>
+        </div>
       </section>
 
       <section id="page-3" class="page research-page" aria-label="宏观研究">
@@ -564,10 +694,11 @@
     </main>
 
     <script src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>
-    <script src="gold-volatility-data.js" defer></script>
+    <script src="gold-signal-series-data.js" defer></script>
+    <script src="gold-etf.js" defer></script>
     <script src="macro-data.js" defer></script>
     <script src="app.js" defer></script>
-    <script src="gold-volatility.js" defer></script>
+    <script src="gold-signal-series.js" defer></script>
     <script src="macro-charts.js" defer></script>
   </body>
 </html>
