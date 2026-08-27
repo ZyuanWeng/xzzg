@@ -6,7 +6,7 @@
     <title>兴证资管 - 固定收益与多元资产研究平台</title>
     <meta name="description" content="覆盖黄金、宏观、固定收益与权益研究的多资产研究平台。">
     <script src="internal-notice.js?v=4"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260826-9">
   </head>
   <body>
     <header class="topbar">
@@ -326,6 +326,7 @@
             </div>
             <span id="monthlySignalUpdate" class="module-meta">数据更新至</span>
           </div>
+          <div id="monthly-signal-summary" class="gold-monitor-table-wrap" aria-label="月频指标最新状态"></div>
           <div class="gold-signal-chart-grid">
             <article class="gold-signal-chart-card">
               <h3>GPR 月度值与信号</h3>
@@ -336,7 +337,7 @@
               <div id="monthly-inventory" class="gold-signal-chart" aria-label="COMEX黄金库存与信号图"></div>
             </article>
             <article class="gold-signal-chart-card gold-signal-chart-card--wide">
-              <h3>黄金 ETF 合计持有量与信号</h3>
+              <h3>黄金 ETF 合计持有量与信号 (iShares和SPDR)</h3>
               <div id="monthly-etf" class="gold-signal-chart" aria-label="黄金ETF合计持有量与信号图"></div>
             </article>
           </div>
@@ -351,14 +352,15 @@
             </div>
             <span id="dailySignalUpdate" class="module-meta">数据更新至</span>
           </div>
+          <div id="daily-signal-summary" class="gold-monitor-table-wrap" aria-label="日频指标最新状态"></div>
           <div class="gold-signal-chart-grid">
             <article class="gold-signal-chart-card">
               <h3>GVZ 与高波状态</h3>
               <div id="daily-gvz" class="gold-signal-chart" aria-label="GVZ与高波状态图"></div>
             </article>
             <article class="gold-signal-chart-card">
-              <h3>期现基差 MA60 与信号</h3>
-              <div id="daily-basis" class="gold-signal-chart" aria-label="期现基差MA60与信号图"></div>
+              <h3>期限基差、MA60 与生效信号</h3>
+              <div id="daily-basis" class="gold-signal-chart gold-signal-chart--scrollable" aria-label="期限基差、MA60与生效信号图"></div>
             </article>
             <article class="gold-signal-chart-card gold-signal-chart-card--wide">
               <h3>黄金趋势均线与信号</h3>
@@ -376,7 +378,7 @@
                   <p class="wgc-eyebrow">Regional Flow</p>
                   <h3>黄金 ETF 区域流动</h3>
                 </div>
-                <span class="module-meta">数据截至 2026-08-14</span>
+                <span class="module-meta" id="flowDataAsOf">数据截至 2026年8月21日</span>
               </div>
               <div class="controls-row">
                 <div class="toggle" id="flowUnit" aria-label="资金流动单位">
@@ -390,7 +392,7 @@
                   <button type="button" data-v="Weekly" class="active">每周</button>
                 </div>
               </div>
-              <div class="axis-head"><span id="flowLeftLabel">基金流量（十亿美元）</span><span>黄金（美元/盎司）</span></div>
+              <div class="axis-head"><span id="flowLeftLabel">基金流量（亿美元）</span><span>黄金（美元/盎司）</span></div>
               <div id="flowChart" class="chart-box"></div>
               <div class="legend-boxes" id="flowLegend"></div>
               <div class="source-line">数据来源：Bloomberg、WGC、兴证资管</div>
@@ -402,7 +404,7 @@
                   <p class="wgc-eyebrow">Assets Under Management</p>
                   <h3>黄金 ETF 资产管理规模</h3>
                 </div>
-                <span class="module-meta">数据截至 2026-08-14</span>
+                <span class="module-meta" id="holdDataAsOf">数据截至 2026年8月21日</span>
               </div>
               <div class="controls-row">
                 <div class="toggle" id="holdUnit" aria-label="资产管理单位">
@@ -695,10 +697,11 @@
 
     <script src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>
     <script src="gold-signal-series-data.js" defer></script>
-    <script src="gold-etf.js" defer></script>
+    <script src="gold-monitor-data.js?v=20260826-7" defer></script>
+    <script src="gold-etf.js?v=20260827-2" defer></script>
     <script src="macro-data.js" defer></script>
     <script src="app.js" defer></script>
-    <script src="gold-signal-series.js" defer></script>
+    <script src="gold-signal-series.js?v=20260826-9" defer></script>
     <script src="macro-charts.js" defer></script>
   </body>
 </html>

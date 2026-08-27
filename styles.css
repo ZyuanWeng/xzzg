@@ -1866,6 +1866,127 @@ input {
   margin: 0 -24px 18px;
 }
 
+.gold-monitor-table-wrap {
+  margin: 0 0 16px;
+  overflow-x: auto;
+  border: 1px solid #dbe3ed;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.gold-monitor-table {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #173653;
+  font-size: 13px;
+}
+
+.gold-monitor-table th,
+.gold-monitor-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e3e9f1;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.gold-monitor-table thead th {
+  color: #244460;
+  background: #eef3f8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gold-monitor-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.gold-monitor-table tbody tr:nth-child(even) td {
+  background: #fafbfd;
+}
+
+.gold-monitor-table th:nth-child(1),
+.gold-monitor-table td:nth-child(1) {
+  width: 13%;
+}
+
+.gold-monitor-table th:nth-child(2),
+.gold-monitor-table td:nth-child(2) {
+  width: 9%;
+  text-align: center;
+}
+
+.gold-monitor-table th:nth-child(4),
+.gold-monitor-table td:nth-child(4) {
+  width: 12%;
+  text-align: center;
+}
+
+.gold-monitor-table th:nth-child(3),
+.gold-monitor-table td:nth-child(3) {
+  width: 14%;
+  text-align: center;
+}
+
+.gold-monitor-table th:nth-child(5),
+.gold-monitor-table td:nth-child(5) {
+  width: 16%;
+}
+
+.gold-monitor-table th:nth-child(6),
+.gold-monitor-table td:nth-child(6) {
+  width: 36%;
+}
+
+.gold-monitor-rule {
+  color: #334b64;
+  line-height: 1.6;
+}
+
+.gold-monitor-signal,
+.gold-monitor-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gold-monitor-signal {
+  justify-content: center;
+  min-width: 30px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+}
+
+.gold-monitor-signal--on {
+  color: #067647;
+  background: #dff5e9;
+  border-color: #b7e3cc;
+}
+
+.gold-monitor-signal--off {
+  color: #b54708;
+  background: #fff0e8;
+  border-color: #f4c7aa;
+}
+
+.gold-monitor-status {
+  padding: 0 10px;
+}
+
+.gold-monitor-status--on {
+  color: #087f5b;
+  background: #eef8f3;
+}
+
+.gold-monitor-status--off {
+  color: #b54708;
+  background: #fff3ec;
+}
+
 .gold-signal-chart-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1873,6 +1994,7 @@ input {
 }
 
 .gold-signal-chart-card {
+  position: relative;
   min-width: 0;
   padding: 14px 14px 8px;
   background: #fff;
@@ -1891,9 +2013,107 @@ input {
   line-height: 1.35;
 }
 
+.gold-signal-chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 38px;
+}
+
+.gold-signal-period-controls {
+  display: inline-flex;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.gold-signal-period-controls button {
+  min-width: 52px;
+  height: 34px;
+  padding: 0 10px;
+  color: #17395f;
+  background: #fff;
+  border: 1px solid #b9c7da;
+  border-right-width: 0;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.gold-signal-period-controls button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.gold-signal-period-controls button:last-child {
+  border-right-width: 1px;
+  border-radius: 0 4px 4px 0;
+}
+
+.gold-signal-period-controls button:hover,
+.gold-signal-period-controls button:focus-visible {
+  position: relative;
+  color: #0d4f8b;
+  background: #f2f6fb;
+  outline: none;
+}
+
+.gold-signal-period-controls button.is-active {
+  color: #fff;
+  background: #2f6fb5;
+  border-color: #2f6fb5;
+}
+
+.gold-signal-basis-legend {
+  position: absolute;
+  z-index: 2;
+  top: 70px;
+  left: 78px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #203552;
+  font-size: 11px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.gold-signal-basis-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.gold-signal-legend-line {
+  display: block;
+  width: 34px;
+  height: 0;
+  border-top: 2px solid;
+}
+
+.gold-signal-legend-line--raw {
+  border-color: #165aa7;
+}
+
+.gold-signal-legend-line--ma {
+  border-color: #d08322;
+}
+
+.gold-signal-legend-box {
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: rgba(89, 145, 207, 0.25);
+  border: 1px solid rgba(89, 145, 207, 0.65);
+}
+
 .gold-signal-chart {
   width: 100%;
   height: 410px;
+}
+
+.gold-signal-chart--scrollable {
+  height: 485px;
 }
 
 .gold-signal-source {
@@ -1929,8 +2149,38 @@ input {
     padding-left: 8px;
   }
 
+  .gold-signal-chart-head {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .gold-signal-period-controls button {
+    min-width: 44px;
+    height: 32px;
+    padding: 0 7px;
+    font-size: 11px;
+  }
+
+  .gold-signal-basis-legend {
+    position: static;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin: 8px 46px 0;
+    font-size: 9px;
+  }
+
+  .gold-signal-legend-line {
+    width: 28px;
+  }
+
   .gold-signal-chart {
     height: 440px;
+  }
+
+  .gold-monitor-table th,
+  .gold-monitor-table td {
+    padding: 9px 10px;
   }
 }
 
