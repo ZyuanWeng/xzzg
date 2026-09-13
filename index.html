@@ -6,7 +6,7 @@
     <title>兴证资管 - 固定收益与多元资产研究平台</title>
     <meta name="description" content="覆盖黄金、宏观、固定收益与权益研究的多资产研究平台。">
     <script src="internal-notice.js?v=4"></script>
-    <link rel="stylesheet" href="styles.css?v=20260826-9">
+    <link rel="stylesheet" href="styles.css?v=20260903-1">
   </head>
   <body>
     <header class="topbar">
@@ -479,16 +479,16 @@
         </div>
       </section>
 
-      <section id="page-4" class="page research-page" aria-label="固定收益研究">
-        <div class="module research-page-intro">
+      <section id="page-4" class="page research-page fixed-income-page" aria-label="固定收益研究">
+        <div class="module research-page-intro macro-page-intro">
           <p>Fixed Income</p>
-          <h2>固定收益研究</h2>
-          <span>研究框架已建立，内容待接入。</span>
+          <h2>固定收益市场监测</h2>
+          <span>全球利率、信用利差与境内债市</span>
+          <strong id="fixedIncomeUpdateDate" class="macro-intro-date">数据读取中</strong>
         </div>
-        <div class="research-module-grid">
-          <article><span>01</span><h3>模块一</h3><p>内容待接入</p></article>
-          <article><span>02</span><h3>模块二</h3><p>内容待接入</p></article>
-          <article><span>03</span><h3>模块三</h3><p>内容待接入</p></article>
+        <nav id="fixedIncomeCategoryNav" class="macro-category-nav fixed-income-category-nav" aria-label="固收图表分类"></nav>
+        <div id="fixedIncomeResearchContent" class="macro-research-content fixed-income-research-content">
+          <p class="macro-loading">正在载入固收图表数据...</p>
         </div>
       </section>
 
@@ -700,8 +700,10 @@
     <script src="gold-monitor-data.js?v=20260826-7" defer></script>
     <script src="gold-etf.js?v=20260827-2" defer></script>
     <script src="macro-data.js" defer></script>
+    <script src="fixed-income-data.js?v=20260903-1" defer></script>
     <script src="app.js" defer></script>
     <script src="gold-signal-series.js?v=20260826-9" defer></script>
     <script src="macro-charts.js" defer></script>
+    <script src="fixed-income-charts.js?v=20260903-3" defer></script>
   </body>
 </html>

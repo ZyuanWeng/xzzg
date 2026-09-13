@@ -1436,6 +1436,39 @@ input {
   font-size: 11px;
 }
 
+.fixed-income-page {
+  padding: 0;
+  background: transparent;
+}
+
+.fixed-income-chart-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.fixed-income-chart {
+  width: 100%;
+  min-height: 405px;
+}
+
+.fixed-income-chart-grid.is-single .fixed-income-chart {
+  min-height: 430px;
+}
+
+.fixed-income-chart-source {
+  margin: auto 0 0;
+  padding: 0 14px 11px;
+  color: #8a96a6;
+  font-size: 11px;
+  text-align: right;
+}
+
+.fixed-income-period-switch button:focus-visible {
+  outline: 2px solid #77a9dc;
+  outline-offset: 2px;
+}
+
 .gold-page {
   padding: 0;
   background: transparent;
@@ -2910,7 +2943,9 @@ input {
   }
 
   .macro-chart,
-  .macro-chart-card.is-categorical .macro-chart {
+  .macro-chart-card.is-categorical .macro-chart,
+  .fixed-income-chart,
+  .fixed-income-chart-grid.is-single .fixed-income-chart {
     min-height: 340px;
   }
 
