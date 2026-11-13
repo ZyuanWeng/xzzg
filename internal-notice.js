@@ -3,7 +3,7 @@
 
   var storageKey = "internal-development-notice";
   var acceptedValue = "accepted-v1";
-  var testMode = true;
+  var testMode = false;
   var root = document.documentElement;
   var accepted = false;
 
