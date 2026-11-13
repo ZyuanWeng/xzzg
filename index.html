@@ -7,6 +7,7 @@
     <meta name="description" content="覆盖黄金、宏观、固定收益与权益研究的多资产研究平台。">
     <script src="internal-notice.js?v=4"></script>
     <link rel="stylesheet" href="styles.css?v=20260903-1">
+    <link rel="stylesheet" href="equity.css?v=20261106-1">
   </head>
   <body>
     <header class="topbar">
@@ -21,7 +22,7 @@
         <a href="#page-5" data-page-link="page-5">权益</a>
         <a href="#page-6" data-page-link="page-6">CVOYA</a>
       </nav>
-      <a class="account-link" href="#top">开发中</a>
+      <a class="account-link" href="#top">提提意见吧，求求了</a>
     </header>
 
     <main id="top" class="dashboard-shell is-home">
@@ -33,12 +34,12 @@
         <div class="metric-strip" aria-label="关键指标">
           <article class="metric-card">
             <span>当前情绪</span>
-            <strong>26%</strong>
+            <strong>6%</strong>
             <em class="state cool">低迷区间</em>
           </article>
           <article class="metric-card">
             <span>更新日期</span>
-            <strong>2026-08-20</strong>
+            <strong>2026-11-11</strong>
             <em>交易日数据</em>
           </article>
           <article class="metric-card">
@@ -492,16 +493,16 @@
         </div>
       </section>
 
-      <section id="page-5" class="page research-page" aria-label="权益研究">
-        <div class="module research-page-intro">
+      <section id="page-5" class="page research-page equity-page" aria-label="权益研究">
+        <div class="module research-page-intro macro-page-intro">
           <p>Equity</p>
-          <h2>权益研究</h2>
-          <span>研究框架已建立，内容待接入。</span>
+          <h2>权益市场监测</h2>
+          <span>估值、行业、资金与市场风格</span>
+          <strong id="equityUpdateDate" class="macro-intro-date">数据读取中</strong>
         </div>
-        <div class="research-module-grid">
-          <article><span>01</span><h3>模块一</h3><p>内容待接入</p></article>
-          <article><span>02</span><h3>模块二</h3><p>内容待接入</p></article>
-          <article><span>03</span><h3>模块三</h3><p>内容待接入</p></article>
+        <nav id="equityCategoryNav" class="macro-category-nav" aria-label="权益图表分类"></nav>
+        <div id="equityResearchContent" class="macro-research-content">
+          <p class="macro-loading">正在载入权益图表数据...</p>
         </div>
       </section>
 
@@ -698,12 +699,14 @@
     <script src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>
     <script src="gold-signal-series-data.js" defer></script>
     <script src="gold-monitor-data.js?v=20260826-7" defer></script>
-    <script src="gold-etf.js?v=20260827-2" defer></script>
-    <script src="macro-data.js" defer></script>
-    <script src="fixed-income-data.js?v=20260903-1" defer></script>
-    <script src="app.js" defer></script>
+    <script src="gold-etf.js?v=12dd16344217" defer></script>
+    <script src="macro-data.js?v=298a8ba8dc00" defer></script>
+    <script src="fixed-income-data.js?v=0a55a0c5c959" defer></script>
+    <script src="app.js?v=cadf870e9690" defer></script>
     <script src="gold-signal-series.js?v=20260826-9" defer></script>
     <script src="macro-charts.js" defer></script>
     <script src="fixed-income-charts.js?v=20260903-3" defer></script>
+    <script src="equity-data.js?v=73216867c80c" defer></script>
+    <script src="equity-charts.js?v=20261106-1" defer></script>
   </body>
 </html>
